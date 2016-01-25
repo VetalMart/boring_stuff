@@ -609,3 +609,5 @@
 
 (gedit:5717): GVFS-RemoteVolumeMonitor-WARNING **: Owner of volume monitor org.gtk.Private.MTPVolumeMonitor disconnected from the bus; removing drives/volumes/mounts
 g_dbus_connection_real_closed: Remote peer vanished with error: Underlying GIOStream returned 0 bytes on an async read (g-io-error-quark, 0). Exiting.
+
+** (gedit:3240): WARNING **: Couldn't connect to accessibility bus: Failed to connect to socket /tmp/dbus-4obSHHVzPw: У з'єднанні відмовлено

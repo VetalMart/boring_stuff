@@ -52,7 +52,7 @@ while j <= q:
             print("fuck!")
         else:
             j = 0
-        
+            print("погнали по новій! :) ")
                 
     
  
