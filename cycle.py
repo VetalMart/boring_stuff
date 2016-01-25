@@ -26,14 +26,14 @@ column = ['ПІБ: > ','Адреса: > ','Виконавець: > ', 'Дата 
 d = input("введи дату в форматі ’день.число.рік’ > ")
 q = int(input("скільки %s було заявок по витокам ? > " % d))
 
-#
+# как увязать в одном списке, поля по значениям и даты с временем ?
 j = True
 while j:           
-    if j < q:
-        for i in range(1, 3):
-            a.append(input("%s" % (column[i-1])))
-        ws.append(a)
-        a = []    
+    if j < q:               # цикл отвечающий за количество заявок
+        for i in range(1, 3):            
+            a.append(input("%s" % (column[i-1])))   # create list with information
+        ws.append(a)                    #append prev list to active list
+        a = []                          # clear list
         j += 1
     elif j == q:
         print ("якщо хочеш закінчити ввід натисни ’т’")
