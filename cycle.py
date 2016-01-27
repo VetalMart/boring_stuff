@@ -9,7 +9,6 @@ ws.title = "список"
 a, b = [], []
 column = ['ПІБ абонента: > ','Адреса: > ']
 
-worker = input("Старший слюсар зміни:> ")   
 
 while True:
     try:
@@ -36,7 +35,37 @@ while True:
             #создание списка с инф. о утечках и абонетах
             a.append(input("%s" % (column[i-1])))   
             
+        #цикл відповідає за вибір слюсаря
+        while True:    
+            worker_list = ['Стасюк О.А','Кравчук А.М.',
+                           'Кучер О.В.','Бортяний П.А.'
+                          ]
+            print("Виберіть слюсаря, який виконував заявку")
+            j = 0
+            for i in worker_list:
+                print("Якщо {0} натисніть - {1}".format(i, j))
+                j += 1
+            w = int(input("> "))   
+            if w == 0:
+                worker = worker_list[0]
+                break
+            elif w == 1:
+                worker = worker_list[1]
+                break
+            elif w == 2:
+                worker = worker_list[2]
+                break
+            elif w == 3:
+                worker = worker_list[3]
+                break
+            elif ((w < 0) or (w > 3)):
+                print("Ви ввели не вірне число, спробуйте ще")
+            else:
+                print("Ви ввели який текст, спробуйте ще")
+
+        #додавання слюсаря до списку
         a.append(worker) 
+        
         #список дат нужно будет для прикрепления к инормации по заявкам, 
         # а так же для вычисления времени потраченого в пути 
         while True:
