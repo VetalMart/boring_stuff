@@ -1,10 +1,12 @@
+# coding: cp1251
+
 from openpyxl import *
 from datetime import *
 
 wb = Workbook()
 ws = wb.active
 
-ws.title = "список"
+ws.title = "список".encode('cp1251').decode('utf-8')
 
 a, b = [], []
 column = ['ПІБ абонента: > ','Адреса: > ']
@@ -40,7 +42,7 @@ while True:                 #кількість заявок
         
         #ПІБ та адреса
         for i in range(1, 3):            
-            a.append(input("%s" % (column[i-1])))   
+            a.append(input("%s" % (column[i-1])).encode('cp1251').decode('utf-8'))   
             
         
         while True:         #вибір слюсаря   
@@ -71,7 +73,7 @@ while True:                 #кількість заявок
                 print("Ви ввели який текст, спробуйте ще")
 
         #додавання слюсаря до списку
-        a.append(worker) 
+        a.append(worker.encode('cp1251').decode('utf-8')) 
 
         while True:
             while True:
@@ -109,15 +111,8 @@ while True:                 #кількість заявок
             else:
                 print("Між отриманням та прибуттям більше 40 хвилин, вводь ще раз")                     
             
-            
-        
-
-        
         a.append(abs(datetime.combine(d, t2) - datetime.combine(d, t1)))
-        
-        
-        
-        
+                                
         #вставка пустої комірки
         a.append('')
         #причина аварии
@@ -141,25 +136,26 @@ while True:                 #кількість заявок
                 3 - На продувній заглушці
                 > """))
                 if reason == 1:
-                    a.append("""Витік газу на стояку н.т. """)
+                    a.append("""Витік газу на стояку н.т. """.encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 2:
-                    a.append("""Витік газу на крані стояка н.т. """)
+                    a.append("""Витік газу на крані стояка н.т. """.encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 3:
-                    a.append("""Витік газу на продувній заглушці стояка н.т. """)
+                    a.append("""Витік газу на продувній заглушці стояка н.т. """.encode('cp1251').decode('utf-8'))
                     break
                 else:
                     print("Ви допустили помилку - вводьте ще раз!")
             elif reason == 2:       #витік на стояку с.т.
                 reason = int(input("""вибірть цифру:
                 1 - На самому стояку
-                2 - На крані стояка """))
+                2 - На крані стояка 
+				> """))
                 if reason == 1:
-                    a.append("""Витік газу на стояку c.т. """)
+                    a.append("""Витік газу на стояку c.т. """.encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 2:
-                    a.append("""Витік газу на крані стояка c.т """)
+                    a.append("""Витік газу на крані стояка c.т """.encode('cp1251').decode('utf-8'))
                     break
                 else:
                     print("Ви допустили помилку - вводьте ще")
@@ -171,16 +167,16 @@ while True:                 #кількість заявок
                 4 - На гнучкому газопроводі до ОК
                 > """))
                 if reason == 1:
-                    a.append("""Витік газу на атоматиці ОК""")
+                    a.append("""Витік газу на атоматиці ОК""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 2:
-                    a.append("""Витік газу на крані опуску до ОК""")
+                    a.append("""Витік газу на крані опуску до ОК""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 3:
-                    a.append("""Витік газу на різбовому з’днанні опуску до ОК""")
+                    a.append("""Витік газу на різбовому з’днанні опуску до ОК""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 4:
-                    a.append("""Витік газу на гнучкому газопроводі до ОК""")
+                    a.append("""Витік газу на гнучкому газопроводі до ОК""".encode('cp1251').decode('utf-8'))
                     break
                 else:
                     print("Ви допустили помилку - вводьте ще") 
@@ -195,13 +191,13 @@ while True:                 #кількість заявок
                     a.append("""Витік газу на ПГ-4""")
                     break
                 elif reason == 2:
-                    a.append("""Витік газу на крані опуску до ПГ-4""")
+                    a.append("""Витік газу на крані опуску до ПГ-4""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 3:
-                    a.append("""Витік газу на різбовому з’днанні опуску до ПГ-4""")
+                    a.append("""Витік газу на різбовому з’днанні опуску до ПГ-4""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 4:
-                    a.append("""Витік газу на гнучкому газопроводі до ПГ-4""")
+                    a.append("""Витік газу на гнучкому газопроводі до ПГ-4""".encode('cp1251').decode('utf-8'))
                     break
                 else:
                     print("Ви допустили помилку - вводьте ще") 
@@ -213,16 +209,16 @@ while True:                 #кількість заявок
                 4 - На гнучкому газопроводі до ГК
                 > """))
                 if reason == 1:
-                    a.append("""Витік газу на ГК""")
+                    a.append("""Витік газу на ГК""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 2:
-                    a.append("""Витік газу на крані опуску до ГК""")
+                    a.append("""Витік газу на крані опуску до ГК""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 3:
-                    a.append("""Витік газу на різбовому з’днанні опуску до ГК""")
+                    a.append("""Витік газу на різбовому з’днанні опуску до ГК""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 4:
-                    a.append("""Витік газу на гнучкому газопроводі до ГК""")
+                    a.append("""Витік газу на гнучкому газопроводі до ГК""".encode('cp1251').decode('utf-8'))
                     break
                 else:
                     print("Ви допустили помилку - вводьте ще") 
@@ -234,16 +230,16 @@ while True:                 #кількість заявок
                 4 - На гнучкому газопроводі до конвектора
                 > """))
                 if reason == 1:
-                    a.append("""Витік газу на конвекторі""")
+                    a.append("""Витік газу на конвекторі""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 2:
-                    a.append("""Витік газу на крані опуску до конвектора""")
+                    a.append("""Витік газу на крані опуску до конвектора""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 3:
-                    a.append("""Витік газу на різбовому з’днанні опуску до конвектора""")
+                    a.append("""Витік газу на різбовому з’днанні опуску до конвектора""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 4:
-                    a.append("""Витік газу на гнучкому газопроводі до конвектора""")
+                    a.append("""Витік газу на гнучкому газопроводі до конвектора""".encode('cp1251').decode('utf-8'))
                     break
                 else:
                     print("Ви допустили помилку - вводьте ще") 
@@ -254,10 +250,10 @@ while True:                 #кількість заявок
                 > """))
 
                 if reason == 1:
-                    a.append("""Витік газу на флянці стояка н.т.""")
+                    a.append("""Витік газу на флянці стояка н.т.""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 2:
-                    a.append("""Витік газу на флянці стояка с.т.""")
+                    a.append("""Витік газу на флянці стояка с.т.""".encode('cp1251').decode('utf-8'))
                     break
                 else:
                     print("Ви допустили помилку - вводьте ще") 
@@ -269,13 +265,13 @@ while True:                 #кількість заявок
                 > """))
 
                 if reason == 1:
-                    a.append("""Витік газу на РДГ""")
+                    a.append("""Витік газу на РДГ""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 2:
-                    a.append("""Витік газу на вході в РДГ""")
+                    a.append("""Витік газу на вході в РДГ""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 3:
-                    a.append("""Витік газу на виході в РДГ""")
+                    a.append("""Витік газу на виході в РДГ""".encode('cp1251').decode('utf-8'))
                     break                
                 else:
                     print("Ви допустили помилку - вводьте ще") 
@@ -286,15 +282,15 @@ while True:                 #кількість заявок
                 > """))
 
                 if reason == 1:
-                    a.append("""Витік газу на лічильнику""")
+                    a.append("""Витік газу на лічильнику""".encode('cp1251').decode('utf-8'))
                     break
                 elif reason == 2:
-                    a.append("""Витік газу на штуцерах лічильника""")
+                    a.append("""Витік газу на штуцерах лічильника""".encode('cp1251').decode('utf-8'))
                     break
                 else:
                     print("Ви допустили помилку - вводьте ще") 
             elif reason == 0:
-                a.append(input("Ведіть іншу причину витоку: >"))
+                a.append(input("Ведіть іншу причину витоку: >").encode('cp1251').decode('utf-8'))
                 break
             else:
                 print("Ви ввели щось невірно, вводьте ще")
@@ -329,7 +325,7 @@ while True:                 #кількість заявок
             continue
         elif j == 'к':
             name_wb = input("Введіть ім’я файла для збереження>")
-            wb.save(name_wb + '.xlsx')
+            wb.save(name_wb.encode('cp1251').decode('utf-8') + '.xlsx')
             break
         #break
         else:

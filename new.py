@@ -1,8 +1,7 @@
-a, b = [], []
-
-for i in range(1, 3):
-    for j in range(1, 2):
-        a.append(input('> '))
-    b.append(a)
-    
-print (b)
+# coding: cp1251
+a = ['€блука','нас','не пруть']
+b = a.encode('cp1251').decode('utf-8')
+f = open('text.txt', 'w')
+f.write(a)
+f.close()
+#print(a.encode('utf-8').decode('cp1251'))
